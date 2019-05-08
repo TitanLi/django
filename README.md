@@ -5,12 +5,15 @@
 
 [Database](https://docs.djangoproject.com/en/2.2/intro/tutorial02/)
 
-brew install python3
-pip3 install virtualenv
-virtualenv env
-. env/bin/activate
-pip3 install django
-python3 -m django --version
+## 環境準備
+```
+$ brew install python3
+$ pip3 install virtualenv
+$ virtualenv env
+$ . env/bin/activate
+$ pip3 install django
+$ python3 -m django --version
+```
 
 ## create project
 ```
@@ -19,6 +22,7 @@ $ django-admin startproject PROJECT-NAME
 
 ## create app
 ```
+$ cd PROJECT-NAME
 $ python manage.py startapp APP-NAME
 ```
 
@@ -78,11 +82,11 @@ DATABASES = {
 
 > brew install mysql-client
 
-> # mysql-client is not on the `PATH` by default
+> #### mysql-client is not on the `PATH` by default
 
 > export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 
-> # openssl is not on the link path by default
+> #### openssl is not on the link path by default
 
 > export LIBRARY_PATH="$LIBRARY_PATH:/usr/local/opt/openssl/lib/"
 
