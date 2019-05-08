@@ -46,6 +46,29 @@ urlpatterns = [
     path('', views.index, name='index'),
 ]
 ```
+## Install MySQL on MacOS
+1. Docker run container : 
+```
+$ docker run --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=password -d mysql
+```
+2. Mac Install MySQL Client :
+```
+$ brew install mysql --client-only --universal
+```
+> mac MySQL Client UI install : https://www.mysql.com/products/workbench/
+
+> Setting workbench : export PATH=$PATH:/Applications/MySQLWorkbench.app/Contents/MacOS
+3. Connect to MySQL server :
+```
+$ mysql -h 127.0.0.1 -u root -p
+```
+4. MySQL container setting :
+```
+$ docker exec -ti 8 bash
+# mysql -uroot -ppassword
+mysql> ALTER USER root IDENTIFIED WITH mysql_native_password BY 'password';
+mysql> create database test;
+```
 ## set my app to project/urls
 > import django.urls.include
 ```
@@ -65,7 +88,7 @@ $ python manage.py runserver
 
 ## connect mySQL
 ```
-$ vim mysite/settings.py
+$ vim PROJECT-NAME/settings.py
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
