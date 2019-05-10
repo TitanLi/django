@@ -138,6 +138,7 @@ class Choice(models.Model):
     votes = models.IntegerField(default=0)
 ```
 ### Activating models
+> PROJECT-NAME => mysite
 
 > APP-NAME => polls
 
@@ -156,13 +157,37 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
-
-# 透過makemigrations告訴Django您已對模型進行了一些更改
+```
+## 透過makemigrations告訴Django您已對模型進行了一些更改
+> APP-NAME => polls
+```
 # 完成後會產生polls/migrations/0001_initial.py
 $ python manage.py makemigrations polls
 ```
 
 ## 檢查遷移用的SQL
+> APP-NAME => polls
 ```
+# 會產生方便閱讀的SQL
 $ python manage.py sqlmigrate polls 0001
 ```
+
+## 檢查Project是否有問題
+```
+$ python manage.py check
+```
+
+## 在Database建立模型
+```
+$ python manage.py migrate
+```
+
+## 進行資料表修改只需以下步驟
+1. Change your models (in models.py).
+2. Run python manage.py makemigrations to create migrations for those changes
+3. Run python manage.py migrate to apply those changes to the database.
+
+## 可透過Python shell 操作Database
+Python shell：[https://github.com/TitanLi/django/database/shell.md](https://github.com/TitanLi/django/database/shell.md)
+
+建立管理員用戶：[https://github.com/TitanLi/django/createsuperuser/createsuperuser.md](https://github.com/TitanLi/django/createsuperuser/createsuperuser.md)
