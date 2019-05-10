@@ -188,6 +188,6 @@ $ python manage.py migrate
 3. Run python manage.py migrate to apply those changes to the database.
 
 ## 可透過Python shell 操作Database
-Python shell：[https://github.com/TitanLi/django/database/shell.md](https://github.com/TitanLi/django/database/shell.md)
+Python shell：[https://github.com/TitanLi/django/blob/master/database/shell.md](https://github.com/TitanLi/django/blob/master/database/shell.md)
 
-建立管理員用戶：[https://github.com/TitanLi/django/createsuperuser/createsuperuser.md](https://github.com/TitanLi/django/createsuperuser/createsuperuser.md)
+建立管理員用戶：[https://github.com/TitanLi/django/blob/master/createsuperuser/createsuperuser.md](https://github.com/TitanLi/django/blob/master/createsuperuser/createsuperuser.md)
