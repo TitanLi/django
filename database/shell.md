@@ -1,5 +1,7 @@
 # Python shell 操作Database
 參考資料：[https://docs.djangoproject.com/en/2.2/intro/tutorial02/](https://docs.djangoproject.com/en/2.2/intro/tutorial02/)
+
+Database API：[https://docs.djangoproject.com/en/2.2/topics/db/queries/](https://docs.djangoproject.com/en/2.2/topics/db/queries/)
 ## 使用方法：
 ```
 $ python manage.py shell
