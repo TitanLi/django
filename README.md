@@ -25,27 +25,6 @@ $ django-admin startproject PROJECT-NAME
 $ cd PROJECT-NAME
 $ python manage.py startapp APP-NAME
 ```
-
-## write view
-```
-$ vim APP-NAME/views.py
-
-from django.http import HttpResponse
-
-def index(request):
-    return HttpResponse("Hello world")
-```
-## create URLconf file(urls.py)
-```
-$ vim APP-NAME/URLconf_name.py
-from django.urls import path
-
-from . import views
-
-urlpatterns = [
-    path('', views.index, name='index'),
-]
-```
 ## Install MySQL on MacOS
 1. Docker run container : 
 ```
@@ -68,22 +47,6 @@ $ docker exec -ti 8 bash
 # mysql -uroot -ppassword
 mysql> ALTER USER root IDENTIFIED WITH mysql_native_password BY 'password';
 mysql> create database test;
-```
-## set my app to project/urls
-> import django.urls.include
-```
-$ vim ProjectName/urls.py
-from django.contrib import admin
-from django.urls import include, path
-
-urlpatterns = [
-    path('SET-URL/', include('APP-NAME.URLconf_name')),
-    path('admin/', admin.site.urls),
-]
-```
-## run server
-```
-$ python manage.py runserver
 ```
 
 ## connect mySQL
@@ -115,10 +78,51 @@ DATABASES = {
 
 > pip3 install mysqlclient
 
-### 初始化
+## 初始化
 > 須先建立database(mydatabase)
 ```
 $ python manage.py migrate
+```
+
+## write view
+```
+$ vim APP-NAME/views.py
+
+from django.http import HttpResponse
+
+def index(request):
+    return HttpResponse("Hello world")
+```
+## create URLconf file(urls.py)
+```
+$ vim APP-NAME/URLconf_name.py
+from django.urls import path
+
+from . import views
+
+urlpatterns = [
+    path('', views.index, name='index'),
+]
+```
+
+## set my app to project/urls
+> import django.urls.include
+
+> URLconf_name => urls
+```
+$ vim ProjectName/urls.py
+from django.contrib import admin
+from django.urls import include, path
+
+urlpatterns = [
+    path('SET-URL/', include('APP-NAME.URLconf_name')),
+    path('admin/', admin.site.urls),
+]
+```
+
+## run server
+```
+$ python manage.py runserver
 ```
 
 ### Creating models
