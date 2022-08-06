@@ -192,6 +192,17 @@ $ python manage.py migrate
 3. Run python manage.py migrate to apply those changes to the database.
 
 ## 可透過Python shell 操作Database
-Python shell：[https://github.com/TitanLi/django/blob/master/database/shell.md](https://github.com/TitanLi/django/blob/master/database/shell.md)
+Python shell：[https://github.com/TitanLi/django/blob/master/database/README.md](https://github.com/TitanLi/django/blob/master/database/README.md)
 
 建立管理員用戶：[https://github.com/TitanLi/django/blob/master/createsuperuser/createsuperuser.md](https://github.com/TitanLi/django/blob/master/createsuperuser/createsuperuser.md)
+
+## 可透過Web更新資料庫
+編輯APP-NAME/admin.py
+```
+from django.contrib import admin
+
+from .models import CLASS-NAME
+
+admin.site.register(CLASS-NAME)
+```
+[http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/)
